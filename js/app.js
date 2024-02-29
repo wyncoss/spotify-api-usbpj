@@ -186,7 +186,7 @@ function showInfo(data) {
   release.innerHTML = `Fecha de lanzamiento: ${trackReleaseDate}`;
 
   const preview = document.createElement("p");
-  preview.innerHTML = "Reproducir preview";
+  preview.innerHTML = "▶️ Reproducir preview";
   preview.classList.add("cursor-pointer", "mt-3", "font-bold");
   preview.addEventListener("click", () => {
     if (playSong) {

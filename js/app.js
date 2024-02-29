@@ -187,7 +187,7 @@ function showInfo(data) {
 
   const preview = document.createElement("p");
   preview.innerHTML = "▶️ Reproducir preview";
-  preview.classList.add("cursor-pointer", "mt-3", "font-bold");
+  preview.classList.add("cursor-pointer", "mt-3", "font-bold", "inline-block");
   preview.addEventListener("click", () => {
     if (playSong) {
       playAudioPreview(playSong, preview);

@@ -1,5 +1,5 @@
 html {
-  background: #43cea2; /* fallback for old browsers */
+  background: #509bf5; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     90deg,
     #af2896,
@@ -16,7 +16,7 @@ html {
   width: 40px;
   height: 40px;
   margin: 100px auto;
-  background-color: #333;
+  background-color: #d6bcfa;
 
   border-radius: 100%;
   -webkit-animation: sk-scaleout 1s infinite ease-in-out;

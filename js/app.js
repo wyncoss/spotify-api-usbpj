@@ -44,6 +44,7 @@ function SpotifyAPIsearch(event, accessToken) {
   // Validation
   const artist = document.querySelector("#artist").value;
   if (artist === "") {
+    cleanHTML();
     showError("Por favor coloca un artista 😒");
     return;
   }
@@ -111,7 +112,6 @@ async function apiSearch(artist, accessToken) {
 
     showInfo(data);
   } catch (error) {
-    console.error("Error fetching data from Spotify:", error);
     showError("Estamos arreglando algunas cosas, intenta nuevamente.😢");
   }
 }

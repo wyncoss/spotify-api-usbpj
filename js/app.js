@@ -153,7 +153,7 @@ function showInfo(data) {
 
   const img = document.createElement("img");
   img.src = albumImg;
-  img.classList.add("w-64", "h-64", "mx-auto", "rounded");
+  img.classList.add("w-48", "md:w-64", "h-48", "md:h-64", "mx-auto", "rounded");
 
   const album = document.createElement("p");
   album.innerHTML = ` Álbum: ${albumName} `;
@@ -201,7 +201,14 @@ function showInfo(data) {
   //
 
   const resultDiv = document.createElement("div");
-  resultDiv.classList.add("grid", "grid-cols-2", "rounded", "gap-8");
+  resultDiv.classList.add(
+    "grid",
+    "grid-cols-2",
+    "rounded",
+    "gap-8",
+    "p-2",
+    "md:p-0"
+  );
 
   const imgContainer = document.createElement("div");
   imgContainer.classList.add("grid", "justify-end");

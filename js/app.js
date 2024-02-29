@@ -45,6 +45,7 @@ function SpotifyAPIsearch(event, accessToken) {
   const artist = document.querySelector("#artist").value;
   if (artist === "") {
     cleanHTML();
+    audioStatus.pause();
     showError("Por favor coloca un artista 😒");
     return;
   }

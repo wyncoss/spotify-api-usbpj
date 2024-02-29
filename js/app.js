@@ -188,11 +188,12 @@ function showInfo(data) {
   const preview = document.createElement("p");
   preview.innerHTML = "▶️ Reproducir preview";
   preview.classList.add("cursor-pointer", "mt-3", "font-bold", "inline-block");
+  if (!playSong) {
+    preview.classList.add("opacity-50", "pointer-events-none");
+  }
   preview.addEventListener("click", () => {
     if (playSong) {
       playAudioPreview(playSong, preview);
-    } else {
-      showError("No tenemos audio de esta canción 😢");
     }
   });
 

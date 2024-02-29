@@ -207,8 +207,7 @@ function showInfo(data) {
     "rounded",
     "gap-8",
     "p-2",
-    "md:p-0",
-    "items-center"
+    "md:p-0"
   );
 
   const imgContainer = document.createElement("div");

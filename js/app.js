@@ -247,7 +247,7 @@ function playAudioPreview(audioUrl, button) {
     button.innerHTML = "⏹️ Detener preview";
 
     audioStatus.onended = () => {
-      button.innerHTML = "Reproducir preview";
+      button.innerHTML = "▶️ Reproducir preview";
     };
   }
 }

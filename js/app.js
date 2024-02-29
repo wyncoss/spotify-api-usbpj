@@ -240,11 +240,11 @@ let audioStatus = null;
 function playAudioPreview(audioUrl, button) {
   if (audioStatus && !audioStatus.paused) {
     audioStatus.pause();
-    button.innerHTML = "Reproducir preview";
+    button.innerHTML = "▶️ Reproducir preview";
   } else {
     audioStatus = new Audio(audioUrl);
     audioStatus.play();
-    button.innerHTML = "Detener preview";
+    button.innerHTML = "⏹️ Detener preview";
 
     audioStatus.onended = () => {
       button.innerHTML = "Reproducir preview";

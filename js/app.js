@@ -139,6 +139,7 @@ function showInfo(data) {
   const trackUrl = data.tracks.items[0].external_urls.spotify;
   const albumImg = data.tracks.items[0].album.images[0].url;
   const albumName = data.tracks.items[0].album.name;
+  const albumUrl = data.tracks.items[0].album.external_urls.spotify;
   const albumType = data.tracks.items[0].album.album_type;
   const artists = data.tracks.items[0].artists;
   const trackDuration = data.tracks.items[0].duration_ms;
@@ -155,9 +156,11 @@ function showInfo(data) {
   img.src = albumImg;
   img.classList.add("w-48", "md:w-64", "h-48", "md:h-64", "mx-auto", "rounded");
 
+  let albumInner = "Álbum: ";
+
   const album = document.createElement("p");
-  album.innerHTML = ` Álbum: ${albumName} `;
-  album.classList.add("text-base");
+  albumInner += `<a class="cursor-pointer font-semibold text-purple-200 hover:text-purple-100" href="${albumUrl}" target="_blank">${albumName}</a> `;
+  album.innerHTML = ` ${albumInner} `;
 
   const type = document.createElement("p");
   type.innerHTML = ` Tipo: ${capitalize(albumType)} `;

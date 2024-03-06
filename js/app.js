@@ -136,6 +136,7 @@ function formatDuration(milliseconds) {
 
 function showInfo(data) {
   const trackName = data.tracks.items[0].name;
+  const trackUrl = data.tracks.items[0].external_urls.spotify;
   const albumImg = data.tracks.items[0].album.images[0].url;
   const albumName = data.tracks.items[0].album.name;
   const albumType = data.tracks.items[0].album.album_type;
@@ -147,9 +148,8 @@ function showInfo(data) {
 
   const name = document.createElement("p");
   name.innerHTML = `
-   ${trackName}
+  <a class="cursor-pointer text-2xl font-bold text-purple-200 hover:text-purple-100" href="${trackUrl}" target="_blank">${trackName}</a>
   `;
-  name.classList.add("text-2xl", "font-bold");
 
   const img = document.createElement("img");
   img.src = albumImg;
@@ -170,9 +170,9 @@ function showInfo(data) {
     const artistName = artistItem.name;
     const artistLink = artistItem.external_urls.spotify;
     if (index === 0) {
-      artistNames += `<a class="underline cursor-pointer font-semibold text-purple-200 hover:text-purple-100" href="${artistLink}" target="_blank">${artistName}</a>`;
+      artistNames += `<a class="cursor-pointer font-semibold text-purple-200 hover:text-purple-100" href="${artistLink}" target="_blank">${artistName}</a>`;
     } else {
-      artistNames += `, <a class="underline cursor-pointer font-semibold text-purple-200 hover:text-purple-100" href="${artistLink}" target="_blank">${artistName}</a>`;
+      artistNames += `, <a class="cursor-pointer font-semibold text-purple-200 hover:text-purple-100" href="${artistLink}" target="_blank">${artistName}</a>`;
     }
   });
 
@@ -189,7 +189,13 @@ function showInfo(data) {
 
   const preview = document.createElement("p");
   preview.innerHTML = "▶️ Reproducir preview";
-  preview.classList.add("cursor-pointer", "mt-3", "font-bold", "inline-block");
+  preview.classList.add(
+    "cursor-pointer",
+    "mt-3",
+    "font-semibold",
+    "inline-block",
+    "text-purple-200"
+  );
   if (!playSong) {
     preview.classList.add("opacity-50", "pointer-events-none");
   }

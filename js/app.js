@@ -168,10 +168,11 @@ function showInfo(data) {
 
   artists.forEach((artistItem, index) => {
     const artistName = artistItem.name;
+    const artistLink = artistItem.external_urls.spotify;
     if (index === 0) {
-      artistNames += artistName;
+      artistNames += `<a class="underline cursor-pointer font-semibold text-purple-200 hover:text-purple-100" href="${artistLink}" target="_blank">${artistName}</a>`;
     } else {
-      artistNames += `, ${artistName}`;
+      artistNames += `, <a class="underline cursor-pointer font-semibold text-purple-200 hover:text-purple-100" href="${artistLink}" target="_blank">${artistName}</a>`;
     }
   });
 
